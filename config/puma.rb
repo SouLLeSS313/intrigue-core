@@ -24,10 +24,11 @@
 # rackup '/u/apps/lolcat/config.ru'
 
 # Set the environment in which the rack's app will run. The value must be a string.
-#
+# Try to read from INTRIGUE_ENV environment variable
 # The default is "development".
+# If you are deploying you will want to set INTRIGUE_ENV or change this line
 #
-environment 'development'
+environment ENV.fetch('INTRIGUE_ENV', 'development')
 #environment 'production'
 
 # Daemonize the server into the background. Highly suggest that
@@ -74,7 +75,7 @@ pidfile "#{cwd}/tmp/pids/intrigue-puma.pid"
 # The default is "tcp://0.0.0.0:9292".
 #
 # bind unix:///tmp/core_puma.sock
-bind 'tcp://127.0.0.1:7777'
+bind 'tcp://0.0.0.0:7777'
 # bind 'unix:///var/run/puma.sock'
 # bind 'unix:///var/run/puma.sock?umask=0111'
 # bind 'ssl://127.0.0.1:9292?key=path_to_key&cert=path_to_cert'

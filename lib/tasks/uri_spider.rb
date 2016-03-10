@@ -112,7 +112,7 @@ class UriSpider < BaseTask
 
             end
           rescue URI::InvalidURIError => e
-            @task_result.logger.log_error "Error, unable to parse #{link} from page #{page_uri}"
+            @task_result.logger.log_error "Unable to parse #{link} from page #{page_uri}"
           end
         end
       end
@@ -141,6 +141,7 @@ class UriSpider < BaseTask
         parse_entities_from_content(page_uri, page_body)
       end
     end # end .crawl
+
   end # crawl_and_extract
 
 end

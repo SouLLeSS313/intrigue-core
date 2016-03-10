@@ -2,15 +2,12 @@ source 'https://rubygems.org'
 
 gem 'sinatra' # API
 gem 'sinatra-contrib'
-
 gem 'puma' # Application Server
-gem 'foreman' # Process management
 gem 'redis' # Redis access
+gem 'redis-namespace'
 gem 'eventmachine'
-
 gem 'sidekiq' # Background Tasks
 gem 'sidekiq-failures'
-
 
 gem 'data_mapper'
 gem 'dm-pg-types'
@@ -18,9 +15,7 @@ gem 'dm-postgres-adapter'
 gem 'dm-sqlite-adapter'
 gem 'dm-noisy-failures'
 gem 'dm-pager'
-
 gem 'elasticsearch'
-
 gem 'iconv' # Encoding
 gem 'rest-client' # Web hooks
 gem 'rspec' # Testing
@@ -42,15 +37,20 @@ gem 'googleajax'        # search_google
 gem 'geoip'             # geolocate_host
 gem 'shodan'            # search_shodan
 gem 'ruby-nmap'         # nmap_scan
-gem 'screencap', :git => 'https://github.com/intrigueio/screencap.git'
-gem 'twitter'           # twitter_account_following, etc
-gem 'arachnid', :git => 'https://github.com/intrigueio/arachnid.git' #:path => "/Users/jcran/work/intrigue/projects/arachnid"
 gem 'yomu'              # web spider
-gem 'gmail'        # email_bounceback
+gem 'gmail'             # email_bounceback
+gem 'screencap', :git => 'https://github.com/intrigueio/screencap.git'
+gem 'arachnid', :git => 'https://github.com/intrigueio/arachnid.git' #:path => "/Users/jcran/work/intrigue/projects/arachnid"
+gem 'censys', :git => 'https://github.com/pentestify/censys.git'
 #gem 'rex'              # metasploit rex library
+#gem 'twitter'           # twitter_account_following, etc
 
 # CLI
 gem 'thor'
 
 # Handlers
 gem 'couchrest'
+
+# Installing foreman as a gem is generally not advised, but
+# we won't let it get in our way
+gem 'foreman'

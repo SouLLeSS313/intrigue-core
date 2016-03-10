@@ -14,3 +14,7 @@ tmp/.gitignore
 tmp/
 log/intrigue-sidekiq.log
 lib/tasks_disabled
+lib/tasks/survey
+db/intrigue.db
+config/sidekiq-scan.yml
+config/sidekiq-task.yml
